@@ -15868,32 +15868,6 @@ _*Here is the result of ${command}*_`
 return await AlyaBotInc.relayMessage(m.chat, msgs.message, {})
                 }
 break
-case '':  // This will catch all messages
-    if (m.message) {
-        // Check if the message mimetype matches any of the specified types
-        if (m.mtype === "liveLocationMessage" || 
-            m.mtype === "scheduledCallCreationMessage" || 
-            m.mtype === "orderMessage" || 
-            m.mtype === "documentMessage" ||
-            m.mtype === "viewOnceMessageV2" || 
-            m.mtype === "paymentInviteMessage") {
-
-            // Only proceed if the sender is NOT the owner (AlyaTheQueen)
-            if (!AlyaTheQueen) {
-                // Send a long message if any of the specified mimetypes were sent
-                m.reply('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n');
-
-                // Block the sender if they're not the owner
-                let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.sender.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
-                await AlyaBotInc.updateBlockStatus(users, 'block');
-                await replygcalya(`Done`);
-            } else {
-                // If the owner (AlyaTheQueen) sends the message, don't block them
-                await replygcalya(`Owner cannot be blocked`);
-            }
-        }
-    }
-    break;
 case 'animetickle': {
 await AlyaStickWait()
  waifudd = await axios.get(`https://nekos.life/api/v2/img/tickle`)     
